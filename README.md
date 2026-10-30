@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bem Me Quero 🌸✨
 
-## Getting Started
+E-commerce moderno com curadoria exclusiva de produtos, experiência de compra sob demanda e finalização de pedidos integrada diretamente via **WhatsApp**.
 
-First, run the development server:
+---
 
+## 🚀 Tecnologias
+
+- **Next.js 15** (App Router, Server Components e Client Components)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Lucide React** (Ícones modernos)
+- **Context API** (Gerenciamento de estado do carrinho com persistência em `localStorage`)
+
+---
+
+## 🛠️ Como Iniciar o Projeto
+
+### 1. Clonar o repositório
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/MathSales02/bem-me-quero.git
+cd bem-me-quero
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Instalar dependências
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Configurar variáveis de ambiente
+Copie o arquivo de exemplo e defina o número do WhatsApp da loja:
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Abra `.env.local` e configure:
+```env
+# Formato internacional: código do país + DDD + número (somente dígitos)
+NEXT_PUBLIC_WHATSAPP_NUMBER=5511999999999
+```
 
-## Learn More
+### 4. Executar em modo de desenvolvimento
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔒 Segurança e Boas Práticas
 
-## Deploy on Vercel
+- **Zero vazamento de credenciais:** Arquivos `.env*` estão devidamente incluídos no `.gitignore`.
+- **Template seguro:** O arquivo `.env.example` fornece as diretrizes sem dados sensíveis.
+- **Validação de entradas:** Validações robustas no formato de telefone e sanitização de dados no envio para a API do WhatsApp.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 Estrutura de Pastas
+
+```text
+├── app/               # Rotas e páginas (Next.js App Router)
+│   ├── carrinho/      # Página dedicada de carrinho
+│   ├── catalogo/      # Catálogo completo com busca e filtros
+│   ├── produto/[slug] # Página dinâmica de detalhes do produto
+│   ├── sobre/         # Como funciona e pilares da marca
+│   ├── privacidade/   # Política de privacidade
+│   └── termos/        # Termos e condições de uso
+├── public/            # Assets estáticos (imagens, logos, banners)
+└── src/
+    ├── components/    # Componentes reutilizáveis (Header, Footer, CartDrawer, etc.)
+    ├── contexts/      # CartContext (estado do carrinho)
+    ├── data/          # Dados de catálogo e categorias
+    ├── lib/           # Utilitários (formatação monetária, gerador de link WhatsApp)
+    └── types/         # Definições TypeScript
+```
+
+---
+
+Desenvolvido com carinho para **Bem Me Quero**.

@@ -1,26 +1,135 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Cores da Identidade Visual Oficial (Bronze, Ouro & Linho) ── */
+  --color-ivory: #F4EFEA;
+  --color-ivory-warm: #EBE4DC;
+  --color-ivory-light: #FAF7F4;
+  --color-graphite: #261D18;
+  --color-graphite-light: #5A4C44;
+  --color-graphite-muted: #8E7F76;
+  
+  --color-bronze: #362319;
+  --color-bronze-light: #4F3526;
+  --color-bronze-dark: #20140E;
+  
+  --color-gold: #9E7A5A;
+  --color-gold-light: #BFA082;
+  --color-gold-muted: #D8C5B2;
+
+  /* Aliases para compatibilidade perfeita com classes existentes */
+  --color-forest: #362319;
+  --color-forest-light: #4F3526;
+  --color-terracotta: #9E7A5A;
+  --color-terracotta-light: #BFA082;
+  
+  --color-border: #E0D5CB;
+  --color-border-light: #EFE8E1;
+
+  /* ── Tipografia Oficial: Sora ───────────────────────── */
+  --font-display: var(--font-sora), 'Sora', sans-serif;
+  --font-body: var(--font-sora), 'Sora', sans-serif;
+
+  /* ── Animações ────────────────────────── */
+  --animate-fade-in: fade-in 0.4s ease both;
+  --animate-slide-up: slide-up 0.4s ease both;
+  --animate-slide-in-right: slide-in-right 0.35s ease both;
+  --animate-scale-in: scale-in 0.25s ease both;
+  --animate-pulse-subtle: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.08); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ── Utilitários de Cor da ID Visual ────────────────────── */
+.bg-bronze { background-color: #362319; }
+.bg-bronze:hover { background-color: #4F3526; }
+.bg-bronze-light { background-color: #4F3526; }
+.bg-bronze-dark { background-color: #20140E; }
+.text-bronze { color: #362319; }
+.border-bronze { border-color: #362319; }
+
+.bg-gold { background-color: #9E7A5A; }
+.bg-gold-light { background-color: #BFA082; }
+.text-gold { color: #9E7A5A; }
+.text-gold-light { color: #BFA082; }
+.border-gold { border-color: #9E7A5A; }
+
+/* ── Base ───────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sora), 'Sora', sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sora), 'Sora', sans-serif;
+  background-color: var(--color-ivory);
+  color: var(--color-graphite);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Reduced motion ─────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Focus visible ──────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Scrollbar ──────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-graphite-muted);
+}
+
+/* ── Selection ──────────────────────────── */
+::selection {
+  background-color: var(--color-forest);
+  color: #fff;
 }
