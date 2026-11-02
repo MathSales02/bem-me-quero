@@ -91,12 +91,13 @@ export default function Header() {
     }
   };
 
-  // Links essenciais com rótulos compactos para nunca quebrar linhas
+  // Links essenciais de categorias de beleza
   const navLinks = [
     { href: '/catalogo', label: 'Catálogo' },
-    { href: '/catalogo?categoria=eletronicos', label: 'Eletrônicos' },
-    { href: '/catalogo?categoria=audio', label: 'Áudio' },
-    { href: '/catalogo?categoria=celulares-e-acessorios', label: 'Celulares' },
+    { href: '/catalogo?categoria=skincare', label: 'Skincare' },
+    { href: '/catalogo?categoria=cabelos', label: 'Cabelos' },
+    { href: '/catalogo?categoria=corpo-e-banho', label: 'Corpo & Banho' },
+    { href: '/catalogo?categoria=maquiagem', label: 'Maquiagem' },
     { href: '/sobre', label: 'Como Funciona' },
   ];
 

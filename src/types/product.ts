@@ -43,13 +43,12 @@ export interface CartItemWithProduct extends CartItem {
 }
 
 export type CategorySlug =
-  | 'eletronicos'
-  | 'celulares-e-acessorios'
-  | 'audio'
-  | 'informatica'
-  | 'casa-e-utilidades'
+  | 'skincare'
+  | 'cabelos'
+  | 'corpo-e-banho'
+  | 'maquiagem'
+  | 'perfumaria'
   | 'beleza-e-cuidados'
-  | 'moda-e-acessorios'
   | 'novidades';
 
 export interface Category {

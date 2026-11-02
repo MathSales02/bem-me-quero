@@ -2,52 +2,34 @@ import { Category, CategorySlug } from '@/types/product';
 
 export const categories: Category[] = [
   {
-    slug: 'eletronicos',
-    name: 'Eletrônicos',
-    description: 'Tecnologia e gadgets para o dia a dia',
-    icon: 'Cpu',
-  },
-  {
-    slug: 'celulares-e-acessorios',
-    name: 'Celulares e Acessórios',
-    description: 'Smartphones e complementos para o seu celular',
-    icon: 'Smartphone',
-  },
-  {
-    slug: 'audio',
-    name: 'Áudio',
-    description: 'Fones, caixas de som e equipamentos de áudio',
-    icon: 'Headphones',
-  },
-  {
-    slug: 'informatica',
-    name: 'Informática',
-    description: 'Equipamentos e acessórios para computador',
-    icon: 'Monitor',
-  },
-  {
-    slug: 'casa-e-utilidades',
-    name: 'Casa e Utilidades',
-    description: 'Produtos úteis para o seu dia a dia em casa',
-    icon: 'Home',
-  },
-  {
-    slug: 'beleza-e-cuidados',
-    name: 'Beleza e Cuidados Pessoais',
-    description: 'Produtos de cuidados pessoais e bem-estar',
+    slug: 'skincare',
+    name: 'Skincare & Rosto',
+    description: 'Séruns, hidratantes faciais e proteção solar para sua pele brilhar',
     icon: 'Sparkles',
   },
   {
-    slug: 'moda-e-acessorios',
-    name: 'Moda e Acessórios',
-    description: 'Peças e acessórios com estilo',
-    icon: 'Shirt',
+    slug: 'cabelos',
+    name: 'Cabelos & Fios',
+    description: 'Óleos nutritivos, máscaras reconstrutoras e tratamentos capilares',
+    icon: 'Heart',
   },
   {
-    slug: 'novidades',
-    name: 'Novidades',
-    description: 'Produtos recém-chegados ao catálogo',
-    icon: 'Zap',
+    slug: 'corpo-e-banho',
+    name: 'Corpo & Banho',
+    description: 'Hidratação profunda, esfoliantes corporais e rituais de banho',
+    icon: 'Droplets',
+  },
+  {
+    slug: 'maquiagem',
+    name: 'Maquiagem',
+    description: 'Batons, acabamentos aveludados e realce da sua beleza',
+    icon: 'Palette',
+  },
+  {
+    slug: 'perfumaria',
+    name: 'Perfumaria & Aromas',
+    description: 'Fragrâncias envolventes, body splashes e bem-estar',
+    icon: 'Flower2',
   },
 ];
 

@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <BrandLogo variant="footer" />
             <p className="mt-4 text-sm leading-relaxed text-white/60 max-w-sm">
-              Produtos de autocuidado, beleza, eletrônicos e utilidades sob demanda. O que você precisa, a gente traz direto até você.
+              Sua curadoria exclusiva de beleza, skincare e autocuidado sob demanda. Os melhores produtos trazidos direto até você.
             </p>
             <a
               href={getDirectWhatsAppUrl()}

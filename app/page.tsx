@@ -2,13 +2,13 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Smartphone, Headphones, Monitor, Home, Sparkles, Shirt, Zap, Cpu, Package, MessageCircle, CheckCircle, Search } from 'lucide-react';
+import { ArrowRight, Sparkles, Heart, Droplets, Palette, Flower2, Package, MessageCircle, CheckCircle, Search, Zap } from 'lucide-react';
 import ProductCard from '@/components/products/ProductCard';
 import { getFeaturedProducts, getNewProducts } from '@/data/products';
 import { categories } from '@/data/categories';
 
 const iconMap: Record<string, React.ElementType> = {
-  Cpu, Smartphone, Headphones, Monitor, Home, Sparkles, Shirt, Zap,
+  Sparkles, Heart, Droplets, Palette, Flower2, Package,
 };
 
 export default function HomePage() {
@@ -25,15 +25,15 @@ export default function HomePage() {
             <div className="relative z-10 max-w-xl animate-fade-in">
               <span className="inline-flex items-center gap-2 rounded-full bg-gold/15 border border-gold/30 px-3.5 py-1 text-xs font-semibold text-bronze mb-6 tracking-wide uppercase">
                 <Sparkles size={13} className="text-gold" />
-                O que você precisa, a gente traz
+                Beleza & Autocuidado sob demanda
               </span>
               <h1 className="font-display text-4xl font-bold leading-[1.15] text-graphite sm:text-5xl lg:text-6xl tracking-tight">
-                Você escolhe o que deseja.{' '}
+                O melhor da beleza.{' '}
                 <span className="text-bronze">A gente traz</span>{' '}
                 <span className="text-gold">até você.</span>
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-graphite-light max-w-md">
-                Produtos selecionados sob demanda com a curadoria exclusiva da Bem Me Quero. Atendimento humanizado e direto no WhatsApp.
+                Cosméticos, skincare e cuidados pessoais selecionados com carinho pela Bem Me Quero. Atendimento humanizado e pedidos direto no WhatsApp.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -58,8 +58,8 @@ export default function HomePage() {
                 <div className="space-y-4">
                   <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-white shadow-lg">
                     <Image
-                      src="/products/headphones.jpg"
-                      alt="Fone de ouvido premium"
+                      src="/products/serum-facial.jpg"
+                      alt="Sérum Facial Vitamina C"
                       fill
                       sizes="(max-width: 1024px) 0vw, 25vw"
                       className="object-cover"
@@ -68,8 +68,8 @@ export default function HomePage() {
                   </div>
                   <div className="relative aspect-square overflow-hidden rounded-2xl bg-white shadow-lg">
                     <Image
-                      src="/products/earbuds.jpg"
-                      alt="Fone intra-auricular"
+                      src="/products/oleo-capilar.jpg"
+                      alt="Óleo Capilar Nutritivo"
                       fill
                       sizes="(max-width: 1024px) 0vw, 25vw"
                       className="object-cover"
@@ -79,8 +79,8 @@ export default function HomePage() {
                 <div className="space-y-4 pt-8">
                   <div className="relative aspect-square overflow-hidden rounded-2xl bg-white shadow-lg">
                     <Image
-                      src="/products/smartwatch.jpg"
-                      alt="Smartwatch esportivo"
+                      src="/products/hidratante-corporal.jpg"
+                      alt="Hidratante Corporal Karité"
                       fill
                       sizes="(max-width: 1024px) 0vw, 25vw"
                       className="object-cover"
@@ -88,8 +88,8 @@ export default function HomePage() {
                   </div>
                   <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-white shadow-lg">
                     <Image
-                      src="/products/smartphone.jpg"
-                      alt="Smartphone moderno"
+                      src="/products/batom-matte.jpg"
+                      alt="Batom Líquido Matte"
                       fill
                       sizes="(max-width: 1024px) 0vw, 25vw"
                       className="object-cover"
@@ -102,8 +102,8 @@ export default function HomePage() {
             {/* Mobile image */}
             <div className="lg:hidden relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-white shadow-lg animate-fade-in">
               <Image
-                src="/products/headphones.jpg"
-                alt="Produtos Bem Me Quero"
+                src="/products/hero-beleza.jpg"
+                alt="Produtos de Beleza Bem Me Quero"
                 fill
                 sizes="100vw"
                 className="object-cover"

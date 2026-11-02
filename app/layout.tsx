@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     template: '%s | Bem Me Quero',
   },
   description:
-    'Descubra produtos escolhidos com cuidado. Encontre eletrônicos, áudio, informática e mais. Monte seu pedido e finalize pelo WhatsApp.',
+    'Descubra produtos de beleza e autocuidado escolhidos com carinho. Cosméticos, skincare, cuidados capilares e corporais. Monte seu pedido e finalize pelo WhatsApp.',
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
     siteName: 'Bem Me Quero',
-    title: 'Bem Me Quero — Produtos que combinam com você',
+    title: 'Bem Me Quero — Beleza & Autocuidado sob demanda',
     description:
-      'Descubra produtos escolhidos com cuidado. Encontre eletrônicos, áudio, informática e mais.',
+      'Descubra produtos de beleza, skincare e autocuidado escolhidos com carinho. Monte seu pedido e finalize pelo WhatsApp.',
   },
   robots: {
     index: true,
