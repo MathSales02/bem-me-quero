@@ -13,9 +13,12 @@ const iconMap: Record<string, React.ElementType> = {
 import { MinimalistHero } from '@/components/ui/minimalist-hero';
 import { getDirectWhatsAppUrl } from '@/lib/whatsapp';
 
+import { useCart } from '@/contexts/CartContext';
+
 export default function HomePage() {
   const featured = getFeaturedProducts();
   const newProducts = getNewProducts();
+  const { itemCount, openCart } = useCart();
 
   const heroNavLinks = [
     { label: 'CATÁLOGO', href: '/catalogo' },
@@ -46,9 +49,12 @@ export default function HomePage() {
           part1: 'pure',
           part2: 'glow.',
         }}
-        circleColorClass="bg-[#E4F361]/90"
+        circleColorClass="bg-gradient-to-tr from-[#9E7A5A] via-[#BFA082] to-[#D8C5B2]"
         socialLinks={heroSocialLinks}
         locationText="Atendimento Exclusivo no WhatsApp • Envio para Todo o Brasil"
+        cartItemCount={itemCount}
+        onOpenCart={openCart}
+        whatsappUrl={getDirectWhatsAppUrl('Olá! Gostaria de tirar dúvidas no WhatsApp da Bem Me Quero.')}
       />
 
       {/* ── CATEGORIES ────────────────────────────────────── */}

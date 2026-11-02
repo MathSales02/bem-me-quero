@@ -101,6 +101,12 @@ export default function Header() {
     { href: '/sobre', label: 'Como Funciona' },
   ];
 
+  // Na Home, no topo, a MinimalistHero já possui o cabeçalho oficial com o carrinho.
+  // O Header global só renderiza na Home quando o usuário rolar a tela, evitando 2 menus!
+  if (pathname === '/' && !scrolled) {
+    return null;
+  }
+
   return (
     <>
       {/* ── Navbar Principal Sticky ── */}
