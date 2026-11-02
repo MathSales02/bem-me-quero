@@ -10,16 +10,46 @@ const iconMap: Record<string, React.ElementType> = {
   Sparkles, Heart, Droplets, Palette, Flower2, Package,
 };
 
-import HeroBeauty from '@/components/hero/HeroBeauty';
+import { MinimalistHero } from '@/components/ui/minimalist-hero';
+import { getDirectWhatsAppUrl } from '@/lib/whatsapp';
 
 export default function HomePage() {
   const featured = getFeaturedProducts();
   const newProducts = getNewProducts();
 
+  const heroNavLinks = [
+    { label: 'CATÁLOGO', href: '/catalogo' },
+    { label: 'SKINCARE', href: '/catalogo?categoria=skincare' },
+    { label: 'CABELOS', href: '/catalogo?categoria=cabelos' },
+    { label: 'COMO FUNCIONA', href: '/sobre' },
+  ];
+
+  const heroSocialLinks = [
+    { icon: MessageCircle, href: getDirectWhatsAppUrl('Olá! Vim pelo site da Bem Me Quero e quero conhecer os produtos de beleza.') },
+    { icon: Heart, href: '/catalogo' },
+    { icon: Sparkles, href: '/catalogo?categoria=skincare' },
+  ];
+
   return (
     <>
-      {/* ── HERO DE BELEZA COM A IMAGEM PRINCIPAL ── */}
-      <HeroBeauty />
+      {/* ── MINIMALIST HERO COM CELIMAX RETINAL SHOT ── */}
+      <MinimalistHero
+        logoText="BEM ME QUERO"
+        badgeText="Beleza & Autocuidado"
+        navLinks={heroNavLinks}
+        mainText="Curadoria exclusiva de beleza e skincare de alta performance. Fórmulas avançadas e cosméticos selecionados sob demanda direto até você."
+        readMoreLink="/catalogo"
+        readMoreText="Explorar Coleção"
+        imageSrc="/products/celimax-retinal-shot.png"
+        imageAlt="Celimax Retinal Shot Tightening Booster — Bem Me Quero"
+        overlayText={{
+          part1: 'pure',
+          part2: 'glow.',
+        }}
+        circleColorClass="bg-[#E4F361]/90"
+        socialLinks={heroSocialLinks}
+        locationText="Atendimento Exclusivo no WhatsApp • Envio para Todo o Brasil"
+      />
 
       {/* ── CATEGORIES ────────────────────────────────────── */}
       <section className="py-16 lg:py-20">
