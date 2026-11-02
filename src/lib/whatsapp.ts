@@ -1,14 +1,17 @@
 import { CartItemWithProduct } from '@/types/product';
 import { formatPrice, calculateSubtotal, calculateTotal } from './format';
 
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+export const DEFAULT_WHATSAPP_NUMBER = '5513974244588';
+
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || DEFAULT_WHATSAPP_NUMBER;
 
 export function getWhatsAppNumber(): string | null {
-  if (!WHATSAPP_NUMBER || WHATSAPP_NUMBER.trim() === '') {
+  const rawNumber = WHATSAPP_NUMBER || DEFAULT_WHATSAPP_NUMBER;
+  if (!rawNumber || rawNumber.trim() === '') {
     return null;
   }
   // Remove any non-digit characters
-  const cleaned = WHATSAPP_NUMBER.replace(/\D/g, '');
+  const cleaned = rawNumber.replace(/\D/g, '');
   if (cleaned.length < 10 || cleaned.length > 15) {
     return null;
   }
@@ -70,3 +73,12 @@ export function buildWhatsAppUrl(items: CartItemWithProduct[]): string | null {
   
   return `https://wa.me/${number}?text=${encodedMessage}`;
 }
+
+export function getDirectWhatsAppUrl(message?: string): string {
+  const number = getWhatsAppNumber() || DEFAULT_WHATSAPP_NUMBER;
+  if (message) {
+    return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+  }
+  return `https://wa.me/${number}`;
+}
+

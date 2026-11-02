@@ -15,6 +15,7 @@ import {
 import { useCart } from '@/contexts/CartContext';
 import { categories } from '@/data/categories';
 import BrandLogo from '@/components/common/BrandLogo';
+import { getDirectWhatsAppUrl } from '@/lib/whatsapp';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -182,7 +183,7 @@ export default function Header() {
             <div className="flex items-center gap-2">
               {/* WhatsApp Online Badge */}
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || ''}`}
+                href={getDirectWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden md:inline-flex items-center gap-2 h-9 px-3 rounded-lg border border-forest/20 bg-forest/5 text-xs font-semibold text-forest hover:bg-forest hover:text-white transition-colors"
@@ -380,7 +381,7 @@ export default function Header() {
               </button>
 
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || ''}`}
+                href={getDirectWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 rounded-lg border border-border bg-white px-4 py-2 text-sm font-semibold text-graphite hover:bg-ivory transition-colors"

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { MessageCircle } from 'lucide-react';
 import { categories } from '@/data/categories';
 import BrandLogo from '@/components/common/BrandLogo';
+import { getDirectWhatsAppUrl } from '@/lib/whatsapp';
 
 export default function Footer() {
   const currentYear = 2026;
@@ -20,7 +21,7 @@ export default function Footer() {
               Produtos de autocuidado, beleza, eletrônicos e utilidades sob demanda. O que você precisa, a gente traz direto até você.
             </p>
             <a
-              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || ''}`}
+              href={getDirectWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex items-center gap-2 rounded-lg bg-gold/20 border border-gold/30 px-4 py-2.5 text-sm font-medium text-gold-light hover:bg-gold hover:text-white transition-all shadow-xs"

@@ -10,6 +10,7 @@ import {
   ArrowRight,
   CheckCircle2,
 } from 'lucide-react';
+import { getDirectWhatsAppUrl } from '@/lib/whatsapp';
 
 export const metadata: Metadata = {
   title: 'Como Funciona | Sobre a Bem Me Quero',
@@ -211,7 +212,7 @@ export default function SobrePage() {
               <ArrowRight size={18} />
             </Link>
             <a
-              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || ''}`}
+              href={getDirectWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white px-8 py-3.5 text-base font-semibold text-graphite hover:bg-ivory-warm transition-colors"
