@@ -8,8 +8,9 @@ import { cn } from '@/lib/utils';
 
 // Define the props interface for type safety and reusability
 export interface MinimalistHeroProps {
-  logoText: string;
-  navLinks: { label: string; href: string }[];
+  logoText?: string;
+  navLinks?: { label: string; href: string }[];
+  showHeader?: boolean;
   title?: string;
   mainText: string;
   readMoreLink: string;
@@ -55,8 +56,9 @@ const SocialIcon = ({ href, icon: Icon }: { href: string; icon: LucideIcon }) =>
 
 // The main reusable Hero Section component
 export const MinimalistHero = ({
-  logoText,
-  navLinks,
+  logoText = 'BEM ME QUERO',
+  navLinks = [],
+  showHeader = false,
   title,
   mainText,
   readMoreLink,
@@ -67,7 +69,7 @@ export const MinimalistHero = ({
   socialLinks,
   locationText,
   className,
-  badgeText,
+  badgeText = 'Produtos Sob Demanda',
   readMoreText = 'Explorar Catálogo',
   circleColorClass = 'bg-[#EDE5DA]',
   cartItemCount = 0,
@@ -77,78 +79,78 @@ export const MinimalistHero = ({
   return (
     <div
       className={cn(
-        'relative flex min-h-[92vh] w-full flex-col items-center justify-between overflow-hidden bg-[#FAF7F4] p-5 font-sans sm:p-8 md:p-12 border-b border-border/60',
+        'relative flex min-h-[calc(100vh-5rem)] w-full flex-col items-center justify-between overflow-hidden bg-[#FAF7F4] p-5 font-sans sm:p-8 md:p-12 border-b border-border/60',
         className
       )}
     >
+      {/* Header Unificado Opcional */}
+      {showHeader && (
+        <header className="z-30 flex w-full max-w-7xl items-center justify-between gap-4 border-b border-graphite/5 pb-4">
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-2"
+          >
+            <Link href="/" className="text-xl sm:text-2xl font-bold tracking-wider font-display text-forest hover:opacity-90 transition-opacity">
+              {logoText}
+            </Link>
+          </motion.div>
 
+          {/* Links de Navegação */}
+          <div className="hidden items-center space-x-7 md:flex">
+            {navLinks.map((link) => (
+              <NavLink key={link.label} href={link.href}>
+                {link.label}
+              </NavLink>
+            ))}
+          </div>
 
-      {/* Header Unificado no Estilo da Hero */}
-      <header className="z-30 flex w-full max-w-7xl items-center justify-between gap-4 border-b border-graphite/5 pb-4">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center gap-2"
-        >
-          <Link href="/" className="text-xl sm:text-2xl font-bold tracking-wider font-display text-forest hover:opacity-90 transition-opacity">
-            {logoText}
-          </Link>
-        </motion.div>
-
-        {/* Links de Navegação */}
-        <div className="hidden items-center space-x-7 md:flex">
-          {navLinks.map((link) => (
-            <NavLink key={link.label} href={link.href}>
-              {link.label}
-            </NavLink>
-          ))}
-        </div>
-
-        {/* Ações da Direita: Atendimento & Carrinho */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center gap-2.5 sm:gap-3"
-        >
-          {badgeText && (
-            <span className="hidden xl:inline-flex items-center rounded border border-forest/20 px-2.5 py-1 text-[10px] font-semibold text-forest uppercase tracking-wider">
-              {badgeText}
-            </span>
-          )}
-
-          {whatsappUrl && (
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 rounded border border-forest/20 bg-white px-3 py-1.5 text-xs font-semibold text-forest hover:bg-forest hover:text-white transition-colors"
-              title="Atendimento no WhatsApp"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-600" />
-              <span>WhatsApp</span>
-            </a>
-          )}
-
-          {/* Botão de Carrinho no Estilo da Hero */}
-          {onOpenCart && (
-            <button
-              type="button"
-              onClick={onOpenCart}
-              className="relative inline-flex items-center gap-2 rounded bg-forest px-3.5 sm:px-4 py-2 text-xs font-semibold text-white hover:bg-forest-light transition-colors active:scale-95"
-              aria-label="Abrir carrinho"
-            >
-              <ShoppingBag className="h-4 w-4" />
-              <span className="hidden xs:inline sm:inline">Carrinho</span>
-              <span className="flex h-5 min-w-[20px] items-center justify-center rounded bg-gold text-[10px] font-bold text-white">
-                {cartItemCount}
+          {/* Ações da Direita: Atendimento & Carrinho */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-2.5 sm:gap-3"
+          >
+            {badgeText && (
+              <span className="hidden xl:inline-flex items-center rounded border border-forest/20 px-2.5 py-1 text-[10px] font-semibold text-forest uppercase tracking-wider">
+                {badgeText}
               </span>
-            </button>
-          )}
-        </motion.div>
-      </header>
+            )}
+
+            {whatsappUrl && (
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center gap-1.5 rounded border border-forest/20 bg-white px-3 py-1.5 text-xs font-semibold text-forest hover:bg-forest hover:text-white transition-colors"
+                title="Atendimento no WhatsApp"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-600" />
+                <span>WhatsApp</span>
+              </a>
+            )}
+
+            {/* Botão de Carrinho no Estilo da Hero */}
+            {onOpenCart && (
+              <button
+                type="button"
+                onClick={onOpenCart}
+                className="relative inline-flex items-center gap-2 rounded bg-forest px-3.5 sm:px-4 py-2 text-xs font-semibold text-white hover:bg-forest-light transition-colors active:scale-95"
+                aria-label="Abrir carrinho"
+              >
+                <ShoppingBag className="h-4 w-4" />
+                <span className="hidden xs:inline sm:inline">Carrinho</span>
+                <span className="flex h-5 min-w-[20px] items-center justify-center rounded bg-gold text-[10px] font-bold text-white">
+                  {cartItemCount}
+                </span>
+              </button>
+            )}
+          </motion.div>
+        </header>
+      )}
 
       {/* Main Content Area */}
       <div className="relative grid w-full max-w-7xl flex-grow grid-cols-1 items-center gap-6 py-6 md:grid-cols-3 md:gap-4 my-auto">
@@ -160,7 +162,7 @@ export const MinimalistHero = ({
           className="z-20 order-2 text-center md:order-1 md:text-left"
         >
           <span className="inline-block text-xs font-bold tracking-[0.2em] text-[#9E7A5A] uppercase mb-2">
-            Curadoria Exclusiva
+            {badgeText || 'Produtos Sob Demanda'}
           </span>
           {title && (
             <h2 className="mx-auto max-w-xs text-xl sm:text-2xl font-display font-bold text-forest leading-snug mb-2.5 md:mx-0">

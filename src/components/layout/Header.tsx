@@ -101,20 +101,14 @@ export default function Header() {
     { href: '/sobre', label: 'Como Funciona' },
   ];
 
-  // Na Home, no topo, a MinimalistHero já possui o cabeçalho oficial com o carrinho.
-  // O Header global só renderiza na Home quando o usuário rolar a tela, evitando 2 menus!
-  if (pathname === '/' && !scrolled) {
-    return null;
-  }
-
   return (
     <>
       {/* ── Navbar Principal Sticky ── */}
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
           scrolled
-            ? 'bg-white shadow-sm border-b border-border'
-            : 'bg-[#F4EFEA] border-b border-border-light'
+            ? 'bg-white/95 backdrop-blur-md shadow-xs border-b border-border'
+            : 'bg-[#FAF7F4]/95 backdrop-blur-md border-b border-border-light'
         }`}
       >
         {/* Top Bar de Aviso que recolhe elegantemente com scroll */}

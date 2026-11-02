@@ -38,7 +38,7 @@ export default function HomePage() {
       {/* ── MINIMALIST HERO COM CELIMAX RETINAL SHOT ── */}
       <MinimalistHero
         logoText="BEM ME QUERO"
-        badgeText="Beleza & Autocuidado"
+        badgeText="Produtos Sob Demanda"
         navLinks={heroNavLinks}
         title="O que você precisa?!"
         mainText="Produtos da melhor qualidade e com preço justo."
