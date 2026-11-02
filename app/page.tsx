@@ -40,16 +40,18 @@ export default function HomePage() {
         logoText="BEM ME QUERO"
         badgeText="Beleza & Autocuidado"
         navLinks={heroNavLinks}
-        mainText="Curadoria exclusiva de beleza e skincare de alta performance. Fórmulas avançadas e cosméticos selecionados sob demanda direto até você."
+        title="O que você precisa?!"
+        mainText="Produtos da melhor qualidade e com preço justo."
         readMoreLink="/catalogo"
         readMoreText="Explorar Coleção"
         imageSrc="/products/celimax-retinal-shot.png"
         imageAlt="Celimax Retinal Shot Tightening Booster — Bem Me Quero"
         overlayText={{
-          part1: 'pure',
-          part2: 'glow.',
+          part1: 'a gente',
+          part2: 'traz.',
         }}
-        circleColorClass="bg-gradient-to-tr from-[#9E7A5A] via-[#BFA082] to-[#D8C5B2]"
+        taglineText="Sob demanda para você"
+        circleColorClass="bg-[#EDE5DA]"
         socialLinks={heroSocialLinks}
         locationText="Atendimento Exclusivo no WhatsApp • Envio para Todo o Brasil"
         cartItemCount={itemCount}
@@ -85,9 +87,9 @@ export default function HomePage() {
                 <Link
                   key={cat.slug}
                   href={`/catalogo?categoria=${cat.slug}`}
-                  className="group flex flex-col items-center gap-3 rounded-xl bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+                  className="group flex flex-col items-center gap-3 rounded-lg bg-white p-5 border border-border transition-colors duration-200 hover:border-forest/40 hover:shadow-sm"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-forest/5 text-forest transition-colors group-hover:bg-forest group-hover:text-white">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-forest/5 text-forest transition-colors group-hover:bg-forest group-hover:text-white">
                     <Icon size={22} />
                   </div>
                   <span className="text-sm font-medium text-graphite text-center leading-tight">
@@ -137,7 +139,7 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
             <div className="mb-10 flex items-end justify-between">
               <div>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-terracotta/10 px-3 py-1 text-xs font-semibold text-terracotta mb-3">
+                <span className="inline-flex items-center gap-1.5 rounded border border-terracotta/20 bg-terracotta/8 px-2.5 py-1 text-xs font-semibold text-terracotta mb-3">
                   <Zap size={12} />
                   Recém-chegados
                 </span>
@@ -200,12 +202,12 @@ export default function HomePage() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="relative flex flex-col rounded-xl bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-md"
+                className="relative flex flex-col rounded-lg bg-white p-6 border border-border"
               >
                 <span className="absolute -top-3 right-4 font-display text-5xl font-bold text-forest/5">
                   {item.step}
                 </span>
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-forest/5 text-forest mb-4">
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-forest/5 text-forest mb-4">
                   <item.icon size={20} />
                 </div>
                 <h3 className="font-semibold text-graphite mb-2">{item.title}</h3>
@@ -227,7 +229,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/catalogo"
-            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-7 py-3.5 text-sm font-semibold text-forest shadow-sm hover:bg-ivory transition-colors"
+            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-7 py-3.5 text-sm font-semibold text-forest hover:bg-ivory transition-colors"
           >
             Explorar catálogo
             <ArrowRight size={16} />

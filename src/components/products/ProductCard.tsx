@@ -32,8 +32,8 @@ export default function ProductCard({ product, variant = 'default' }: ProductCar
 
   return (
     <article
-      className={`group relative flex flex-col bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 ${
-        isFeatured ? 'shadow-sm' : 'shadow-[0_1px_3px_rgba(0,0,0,0.04)]'
+      className={`group relative flex flex-col bg-white rounded-lg overflow-hidden border border-border transition-colors duration-200 hover:border-forest/30 hover:shadow-sm ${
+        isFeatured ? '' : ''
       }`}
     >
       {/* Image */}
@@ -57,7 +57,7 @@ export default function ProductCard({ product, variant = 'default' }: ProductCar
           </div>
         )}
         {product.previousPriceInCents && product.available && (
-          <span className="absolute top-3 left-3 rounded-full bg-terracotta px-2.5 py-1 text-[11px] font-bold text-white">
+          <span className="absolute top-3 left-3 rounded border border-white/30 bg-terracotta px-2.5 py-1 text-[11px] font-bold text-white">
             {Math.round(
               ((product.previousPriceInCents - product.priceInCents) / product.previousPriceInCents) * 100
             )}% OFF
@@ -66,7 +66,7 @@ export default function ProductCard({ product, variant = 'default' }: ProductCar
 
         {/* Quick view overlay */}
         <div className="absolute inset-0 flex items-center justify-center bg-graphite/0 group-hover:bg-graphite/10 transition-colors opacity-0 group-hover:opacity-100">
-          <span className="flex items-center gap-1.5 rounded-full bg-white/90 px-4 py-2 text-xs font-medium text-graphite shadow-sm">
+          <span className="flex items-center gap-1.5 rounded-lg bg-white/90 px-4 py-2 text-xs font-medium text-graphite shadow-sm">
             <Eye size={14} />
             Ver detalhes
           </span>
@@ -98,7 +98,7 @@ export default function ProductCard({ product, variant = 'default' }: ProductCar
             type="button"
             onClick={handleAddToCart}
             disabled={!product.available || added}
-            className={`flex w-full items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-medium transition-all duration-200 ${
+            className={`flex w-full items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-medium transition-colors ${
               !product.available
                 ? 'bg-ivory-warm text-graphite-muted cursor-not-allowed'
                 : added

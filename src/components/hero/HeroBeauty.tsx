@@ -52,13 +52,13 @@ export default function HeroBeauty() {
 
             {/* Título Principal */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-graphite leading-[1.12]">
-              Realce o seu melhor com a curadoria da{' '}
-              <span className="text-forest">Bem Me Quero.</span>
+              O que você precisa?!{' '}
+              <span className="text-forest">A gente traz.</span>
             </h1>
 
             {/* Parágrafo de Apresentação */}
             <p className="mt-6 text-base sm:text-lg text-graphite-light leading-relaxed max-w-xl">
-              Descubra os produtos mais desejados em skincare, cosméticos de alta performance e cuidados pessoais. Selecionados com carinho para você, com entrega rápida e atendimento humanizado direto pelo WhatsApp.
+              Produtos da melhor qualidade e com preço justo. Curadoria exclusiva com atendimento direto pelo WhatsApp e envio para todo o Brasil.
             </p>
 
             {/* Botões de Ação */}

@@ -55,7 +55,7 @@ export default function CartDrawer() {
     <div className="fixed inset-0 z-[60]" role="dialog" aria-modal="true" aria-label="Carrinho de compras">
       {/* Overlay */}
       <div
-        className="absolute inset-0 bg-graphite/30 backdrop-blur-sm transition-opacity"
+        className="absolute inset-0 bg-graphite/40 transition-opacity"
         onClick={closeCart}
         aria-hidden="true"
       />

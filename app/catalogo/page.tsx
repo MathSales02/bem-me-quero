@@ -264,11 +264,11 @@ function CatalogContent() {
           {filtersOpen && (
             <div className="fixed inset-0 z-50 lg:hidden">
               <div
-                className="absolute inset-0 bg-graphite/30 backdrop-blur-sm"
+                className="absolute inset-0 bg-graphite/40"
                 onClick={() => setFiltersOpen(false)}
                 aria-hidden="true"
               />
-              <div className="absolute bottom-0 left-0 right-0 max-h-[80vh] overflow-y-auto rounded-t-2xl bg-ivory p-6 shadow-2xl animate-slide-up">
+              <div className="absolute bottom-0 left-0 right-0 max-h-[80vh] overflow-y-auto rounded-t-lg bg-ivory p-6 shadow-2xl animate-slide-up">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="font-display text-lg font-bold text-graphite">Filtros</h3>
                   <button
@@ -290,10 +290,10 @@ function CatalogContent() {
                     <button
                       type="button"
                       onClick={() => setFilters((prev) => ({ ...prev, category: 'all' }))}
-                      className={`rounded-full px-3 py-1.5 text-sm transition-colors ${
+                      className={`rounded px-3 py-1.5 text-sm transition-colors border ${
                         filters.category === 'all'
-                          ? 'bg-forest text-white'
-                          : 'bg-white text-graphite-light border border-border hover:border-forest'
+                          ? 'bg-forest text-white border-forest'
+                          : 'bg-white text-graphite-light border-border hover:border-forest'
                       }`}
                     >
                       Todas
@@ -303,10 +303,10 @@ function CatalogContent() {
                         key={cat.slug}
                         type="button"
                         onClick={() => setFilters((prev) => ({ ...prev, category: cat.slug }))}
-                        className={`rounded-full px-3 py-1.5 text-sm transition-colors ${
+                        className={`rounded px-3 py-1.5 text-sm transition-colors border ${
                           filters.category === cat.slug
-                            ? 'bg-forest text-white'
-                            : 'bg-white text-graphite-light border border-border hover:border-forest'
+                            ? 'bg-forest text-white border-forest'
+                            : 'bg-white text-graphite-light border-border hover:border-forest'
                         }`}
                       >
                         {cat.name}
@@ -360,7 +360,7 @@ function CatalogContent() {
             {(filters.search || filters.category !== 'all') && (
               <div className="flex flex-wrap items-center gap-2 mb-6">
                 {filters.search && (
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white border border-border px-3 py-1.5 text-sm text-graphite">
+                  <span className="inline-flex items-center gap-1.5 rounded border border-border bg-white px-3 py-1.5 text-sm text-graphite">
                     Busca: &ldquo;{filters.search}&rdquo;
                     <button
                       type="button"
@@ -373,7 +373,7 @@ function CatalogContent() {
                   </span>
                 )}
                 {activeCategory && (
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white border border-border px-3 py-1.5 text-sm text-graphite">
+                  <span className="inline-flex items-center gap-1.5 rounded border border-border bg-white px-3 py-1.5 text-sm text-graphite">
                     {activeCategory.name}
                     <button
                       type="button"

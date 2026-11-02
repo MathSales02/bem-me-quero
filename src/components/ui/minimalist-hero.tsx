@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 export interface MinimalistHeroProps {
   logoText: string;
   navLinks: { label: string; href: string }[];
+  title?: string;
   mainText: string;
   readMoreLink: string;
   imageSrc: string;
@@ -18,6 +19,7 @@ export interface MinimalistHeroProps {
     part1: string;
     part2: string;
   };
+  taglineText?: string;
   socialLinks: { icon: LucideIcon; href: string }[];
   locationText: string;
   className?: string;
@@ -45,7 +47,7 @@ const SocialIcon = ({ href, icon: Icon }: { href: string; icon: LucideIcon }) =>
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="text-graphite/60 transition-all hover:text-forest p-2 rounded-full hover:bg-forest/5"
+    className="text-graphite/60 transition-colors hover:text-forest p-2 rounded hover:bg-forest/5"
   >
     <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
   </a>
@@ -55,17 +57,19 @@ const SocialIcon = ({ href, icon: Icon }: { href: string; icon: LucideIcon }) =>
 export const MinimalistHero = ({
   logoText,
   navLinks,
+  title,
   mainText,
   readMoreLink,
   imageSrc,
   imageAlt,
   overlayText,
+  taglineText,
   socialLinks,
   locationText,
   className,
   badgeText,
   readMoreText = 'Explorar Catálogo',
-  circleColorClass = 'bg-gradient-to-tr from-[#9E7A5A] via-[#BFA082] to-[#D8C5B2]',
+  circleColorClass = 'bg-[#EDE5DA]',
   cartItemCount = 0,
   onOpenCart,
   whatsappUrl,
@@ -77,21 +81,7 @@ export const MinimalistHero = ({
         className
       )}
     >
-      {/* Background ambient light */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div
-          className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full opacity-35 blur-3xl"
-          style={{
-            background: 'radial-gradient(circle, rgba(191, 160, 130, 0.35) 0%, rgba(158, 122, 90, 0.12) 50%, transparent 80%)',
-          }}
-        />
-        <div
-          className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full opacity-25 blur-3xl"
-          style={{
-            background: 'radial-gradient(circle, rgba(235, 228, 220, 0.8) 0%, transparent 70%)',
-          }}
-        />
-      </div>
+
 
       {/* Header Unificado no Estilo da Hero */}
       <header className="z-30 flex w-full max-w-7xl items-center justify-between gap-4 border-b border-graphite/5 pb-4">
@@ -124,7 +114,7 @@ export const MinimalistHero = ({
           className="flex items-center gap-2.5 sm:gap-3"
         >
           {badgeText && (
-            <span className="hidden xl:inline-flex items-center rounded-full bg-forest/5 border border-forest/10 px-3 py-1 text-[11px] font-semibold text-forest uppercase tracking-wider">
+            <span className="hidden xl:inline-flex items-center rounded border border-forest/20 px-2.5 py-1 text-[10px] font-semibold text-forest uppercase tracking-wider">
               {badgeText}
             </span>
           )}
@@ -134,13 +124,10 @@ export const MinimalistHero = ({
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-forest/15 bg-white/80 px-3 py-1.5 text-xs font-semibold text-forest hover:bg-forest hover:text-white transition-all shadow-2xs"
+              className="hidden sm:inline-flex items-center gap-1.5 rounded border border-forest/20 bg-white px-3 py-1.5 text-xs font-semibold text-forest hover:bg-forest hover:text-white transition-colors"
               title="Atendimento no WhatsApp"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600" />
-              </span>
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-600" />
               <span>WhatsApp</span>
             </a>
           )}
@@ -150,12 +137,12 @@ export const MinimalistHero = ({
             <button
               type="button"
               onClick={onOpenCart}
-              className="relative inline-flex items-center gap-2 rounded-xl bg-forest px-3.5 sm:px-4 py-2 text-xs font-semibold text-white shadow-xs hover:bg-forest-light transition-all active:scale-95"
+              className="relative inline-flex items-center gap-2 rounded bg-forest px-3.5 sm:px-4 py-2 text-xs font-semibold text-white hover:bg-forest-light transition-colors active:scale-95"
               aria-label="Abrir carrinho"
             >
               <ShoppingBag className="h-4 w-4" />
               <span className="hidden xs:inline sm:inline">Carrinho</span>
-              <span className="flex h-5 min-w-[20px] items-center justify-center rounded-full bg-[#9E7A5A] px-1.5 text-[10px] font-bold text-white shadow-2xs">
+              <span className="flex h-5 min-w-[20px] items-center justify-center rounded bg-gold text-[10px] font-bold text-white">
                 {cartItemCount}
               </span>
             </button>
@@ -175,6 +162,11 @@ export const MinimalistHero = ({
           <span className="inline-block text-xs font-bold tracking-[0.2em] text-[#9E7A5A] uppercase mb-2">
             Curadoria Exclusiva
           </span>
+          {title && (
+            <h2 className="mx-auto max-w-xs text-xl sm:text-2xl font-display font-bold text-forest leading-snug mb-2.5 md:mx-0">
+              {title}
+            </h2>
+          )}
           <p className="mx-auto max-w-xs text-sm sm:text-base leading-relaxed text-graphite/80 md:mx-0 font-body">
             {mainText}
           </p>
@@ -194,7 +186,7 @@ export const MinimalistHero = ({
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
             className={cn(
-              'absolute z-0 rounded-full shadow-[0_25px_60px_rgba(158,122,90,0.32)] ring-8 ring-white/60',
+              'absolute z-0 rounded-full border border-gold-muted',
               'h-[240px] w-[240px] sm:h-[300px] sm:w-[300px] md:h-[350px] md:w-[350px] lg:h-[410px] lg:w-[410px]',
               circleColorClass
             )}
@@ -224,7 +216,7 @@ export const MinimalistHero = ({
             <span className="text-[#9E7A5A]">{overlayText.part2}</span>
           </h1>
           <span className="mt-3 text-xs uppercase tracking-[0.25em] text-graphite-light font-semibold">
-            Tecnologia K-Beauty
+            {taglineText || 'Produtos sob demanda'}
           </span>
         </motion.div>
       </div>

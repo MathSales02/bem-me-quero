@@ -76,14 +76,14 @@ export default function SobrePage() {
       {/* Hero Section */}
       <section className="bg-ivory-warm border-b border-border-light">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-forest/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-forest mb-4">
+          <span className="inline-flex items-center gap-1.5 rounded border border-forest/20 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-forest mb-4">
             Sobre a Bem Me Quero
           </span>
           <h1 className="font-display text-4xl sm:text-5xl font-bold text-graphite tracking-tight">
-            Produtos pensados para o seu dia a dia, com atendimento de verdade.
+            Produtos pensados para o dia a dia, com atendimento direto e transparente.
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-graphite-light leading-relaxed max-w-3xl mx-auto">
-            A <strong>Bem Me Quero</strong> nasceu para simplificar sua experiência de compra. Reunimos produtos selecionados com foco em utilidade, beleza e praticidade, conectados diretamente a você através de um atendimento ágil e transparente pelo WhatsApp.
+            A <strong>Bem Me Quero</strong> simplifica sua compra. Produtos selecionados com foco em beleza e funcionalidade, com atendimento ágil e sem enrolação pelo WhatsApp.
           </p>
         </div>
       </section>
@@ -96,7 +96,7 @@ export default function SobrePage() {
               Como funciona o processo de compra?
             </h2>
             <p className="mt-3 text-graphite-light">
-              Do carrinho até a sua casa em 4 etapas descomplicadas.
+              Do carrinho até a sua casa em 4 etapas.
             </p>
           </div>
 
@@ -106,12 +106,12 @@ export default function SobrePage() {
               return (
                 <div
                   key={item.step}
-                  className="relative flex flex-col rounded-2xl border border-border-light bg-ivory/50 p-6 sm:p-8 transition-shadow hover:shadow-md"
+                  className="relative flex flex-col rounded-lg border border-border-light bg-white p-6 sm:p-8"
                 >
                   <span className="text-3xl font-display font-extrabold text-forest/20 mb-4">
                     {item.step}
                   </span>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-forest text-white mb-5 shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-forest text-white mb-5">
                     <Icon size={22} />
                   </div>
                   <h3 className="font-display text-lg font-bold text-graphite mb-2">
@@ -145,9 +145,9 @@ export default function SobrePage() {
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl border border-border bg-white p-8 shadow-sm hover:border-forest/30 transition-colors"
+                  className="rounded-lg border border-border bg-white p-8 hover:border-forest/30 transition-colors"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-forest/10 text-forest mb-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-forest/10 text-forest mb-6">
                     <Icon size={24} />
                   </div>
                   <h3 className="font-display text-xl font-bold text-graphite mb-3">
@@ -166,7 +166,7 @@ export default function SobrePage() {
       {/* Garantias & Dúvidas */}
       <section className="py-16 bg-white border-y border-border-light">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl bg-ivory-warm border border-border p-8 sm:p-10">
+          <div className="rounded-lg bg-ivory-warm border border-border p-8 sm:p-10">
             <h3 className="font-display text-2xl font-bold text-graphite mb-6">
               Compromisso e Segurança
             </h3>
@@ -206,7 +206,7 @@ export default function SobrePage() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/catalogo"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-forest px-8 py-3.5 text-base font-semibold text-white shadow-sm hover:bg-forest-light transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg bg-forest px-8 py-3.5 text-base font-semibold text-white hover:bg-forest-light transition-colors"
             >
               Explorar Catálogo
               <ArrowRight size={18} />
@@ -215,7 +215,7 @@ export default function SobrePage() {
               href={getDirectWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white px-8 py-3.5 text-base font-semibold text-graphite hover:bg-ivory-warm transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-white px-8 py-3.5 text-base font-semibold text-graphite hover:bg-ivory-warm transition-colors"
             >
               <MessageCircle size={18} />
               Tirar Dúvidas no WhatsApp

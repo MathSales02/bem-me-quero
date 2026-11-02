@@ -115,7 +115,7 @@ export default function ProductPage() {
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Image gallery */}
           <div className="space-y-4">
-            <div className="relative aspect-square overflow-hidden rounded-2xl bg-white shadow-sm">
+            <div className="relative aspect-square overflow-hidden rounded-lg bg-white border border-border">
               <Image
                 src={product.images[currentImageIndex] || '/products/placeholder.jpg'}
                 alt={`${product.name} — imagem ${currentImageIndex + 1}`}
@@ -127,14 +127,14 @@ export default function ProductPage() {
 
               {!product.available && (
                 <div className="absolute inset-0 flex items-center justify-center bg-graphite/40">
-                  <span className="rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-graphite">
+                  <span className="rounded bg-white/90 px-4 py-2 text-sm font-semibold text-graphite">
                     Indisponível
                   </span>
                 </div>
               )}
 
               {product.previousPriceInCents && product.available && (
-                <span className="absolute top-4 left-4 rounded-full bg-terracotta px-3 py-1 text-xs font-bold text-white">
+                <span className="absolute top-4 left-4 rounded border border-white/30 bg-terracotta px-3 py-1 text-xs font-bold text-white">
                   {Math.round(
                     ((product.previousPriceInCents - product.priceInCents) /
                       product.previousPriceInCents) *

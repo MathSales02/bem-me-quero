@@ -113,8 +113,8 @@ export default function Header() {
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
           scrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-border/80'
-            : 'bg-ivory/95 backdrop-blur-sm border-b border-border-light'
+            ? 'bg-white shadow-sm border-b border-border'
+            : 'bg-[#F4EFEA] border-b border-border-light'
         }`}
       >
         {/* Top Bar de Aviso que recolhe elegantemente com scroll */}
@@ -196,10 +196,7 @@ export default function Header() {
                 className="hidden md:inline-flex items-center gap-2 h-9 px-3 rounded-lg border border-forest/20 bg-forest/5 text-xs font-semibold text-forest hover:bg-forest hover:text-white transition-colors"
                 title="Atendimento no WhatsApp"
               >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                </span>
+                <span className="h-2 w-2 rounded-full bg-emerald-500" />
                 <span className="whitespace-nowrap">Atendimento</span>
               </a>
 
@@ -240,7 +237,7 @@ export default function Header() {
         {/* Barra de Progresso de Rolagem (discreta e perfeitamente nivelada no rodapé da navbar) */}
         <div className="w-full h-[2px] bg-transparent overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-bronze via-gold to-gold-light transition-all duration-150 ease-out"
+            className="h-full bg-bronze transition-all duration-150 ease-out"
             style={{ width: `${scrollProgress}%` }}
             aria-hidden="true"
           />
@@ -248,7 +245,7 @@ export default function Header() {
 
         {/* ── Painel de Busca Integrado ── */}
         {searchOpen && (
-          <div className="border-t border-border-light bg-white/98 backdrop-blur-md animate-slide-up">
+          <div className="border-t border-border-light bg-white animate-slide-up">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
               <form onSubmit={handleSearch} className="flex gap-2 max-w-3xl mx-auto">
                 <div className="relative flex-1">
@@ -258,7 +255,7 @@ export default function Header() {
                     type="search"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Buscar por fones, relógios, luminárias..."
+                    placeholder="Buscar produtos de beleza..."
                     className="w-full rounded-lg border border-border bg-ivory/50 py-2 pl-10 pr-10 text-sm text-graphite placeholder:text-graphite-muted focus:border-forest focus:bg-white focus:ring-1 focus:ring-forest/20 outline-none transition-all"
                   />
                   {searchQuery && (
@@ -282,7 +279,7 @@ export default function Header() {
               {/* Sugestões rápidas de busca */}
               <div className="flex flex-wrap items-center justify-center gap-1.5 mt-2.5 text-xs text-graphite-muted">
                 <span className="text-graphite-light font-medium">Populares:</span>
-                {['Fone Bluetooth', 'Smartwatch', 'Ring Light', 'Carregador'].map((tag) => (
+                {['Skincare', 'Sérum', 'Cabelos', 'Protetor Solar'].map((tag) => (
                   <button
                     key={tag}
                     type="button"
@@ -305,7 +302,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           <div
-            className="fixed inset-0 bg-black/40 backdrop-blur-xs transition-opacity"
+            className="fixed inset-0 bg-graphite/40 transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />

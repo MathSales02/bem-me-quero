@@ -33,6 +33,84 @@ export const products: Product[] = [
     tags: ['destaque', 'novidade'],
   },
   {
+    id: 'prod-fino-hair-mask',
+    slug: 'fino-premium-touch-hair-mask',
+    name: 'Fino Premium Touch Hair Mask Shiseido 230g',
+    description:
+      'A lendária máscara capilar japonesa mais premiada da Ásia. Formulada com 6 tipos de essências de beleza, incluindo Geleia Real EX, Trealose, Esqualano e PCA hidratante. Reparação profunda que penetra no córtex do fio, derretendo o ressecamento e transformando cabelos danificados em fios incrivelmente sedosos, encorpados e com brilho espelhado.',
+    category: 'cabelos',
+    priceInCents: 11990,
+    previousPriceInCents: 14990,
+    images: ['/products/fino-premium-touch.jpg'],
+    available: true,
+    variations: [
+      {
+        id: 'var-fino-tamanho',
+        name: 'Tamanho',
+        type: 'size',
+        options: [
+          { id: 'opt-fino-230g', label: 'Pote 230g', value: '230g', additionalPriceInCents: 0, available: true },
+        ],
+      },
+    ],
+    createdAt: '2026-11-01T18:00:00Z',
+    published: true,
+    tags: ['destaque', 'novidade'],
+  },
+  {
+    id: 'prod-tsubaki-3x-mask',
+    slug: 'tsubaki-premium-ex-repair-mask-3x',
+    name: 'Shiseido Tsubaki Premium EX Repair Mask 3X 180g',
+    description:
+      'Tratamento intensivo capilar japonês com inovadora tecnologia de penetração iônica imediata 3X. Enriquecida com óleo puro de camélia dourada, pérola hidrolisada e geleia real. Proporciona efeito de salão instantâneo em casa sem tempo de pausa: aplicação e enxágue imediato com ultra nutrição e maciez extrema.',
+    category: 'cabelos',
+    priceInCents: 12990,
+    previousPriceInCents: 15990,
+    images: ['/products/tsubaki-mask.webp'],
+    available: true,
+    variations: [
+      {
+        id: 'var-tsubaki-tamanho',
+        name: 'Tamanho',
+        type: 'size',
+        options: [
+          { id: 'opt-tsubaki-180g', label: 'Pote 180g', value: '180g', additionalPriceInCents: 0, available: true },
+        ],
+      },
+    ],
+    createdAt: '2026-11-01T18:30:00Z',
+    published: true,
+    tags: ['destaque', 'novidade'],
+  },
+  {
+    id: 'prod-victoria-secret-body-splash',
+    slug: 'victoria-secret-body-splash-fragrance-mist',
+    name: "Victoria's Secret Body Splash Fragrance Mist 250ml",
+    description:
+      "O clássico e irresistível Body Splash Victoria's Secret para envolver seu corpo em uma nuvem perfumada e refrescante. Fórmula suave com aloe vera e camomila condicionante para uma sensação aveludada e fixação deliciosa ao longo de todo o dia.",
+    category: 'perfumaria',
+    priceInCents: 12990,
+    previousPriceInCents: 14990,
+    images: ['/products/victoria-secret-body-splash.jpg'],
+    available: true,
+    variations: [
+      {
+        id: 'var-vs-fragrancia',
+        name: 'Fragrância',
+        type: 'other',
+        options: [
+          { id: 'opt-amber-vanilla', label: 'Amber Vanilla Blossom', value: 'amber-vanilla', additionalPriceInCents: 0, available: true },
+          { id: 'opt-bare-vanilla', label: 'Bare Vanilla', value: 'bare-vanilla', additionalPriceInCents: 0, available: true },
+          { id: 'opt-pure-seduction', label: 'Pure Seduction', value: 'pure-seduction', additionalPriceInCents: 0, available: true },
+          { id: 'opt-velvet-petals', label: 'Velvet Petals', value: 'velvet-petals', additionalPriceInCents: 0, available: true },
+        ],
+      },
+    ],
+    createdAt: '2026-11-01T19:00:00Z',
+    published: true,
+    tags: ['destaque', 'novidade'],
+  },
+  {
     id: 'prod-001',
     slug: 'serum-facial-antioxidante-vitamina-c',
     name: 'Sérum Facial Antioxidante Vitamina C 10%',
