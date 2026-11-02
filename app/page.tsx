@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Sparkles, Heart, Droplets, Palette, Flower2, Package, MessageCircle, CheckCircle, Search, Zap } from 'lucide-react';
 import ProductCard from '@/components/products/ProductCard';
@@ -11,110 +10,16 @@ const iconMap: Record<string, React.ElementType> = {
   Sparkles, Heart, Droplets, Palette, Flower2, Package,
 };
 
+import HeroBeauty from '@/components/hero/HeroBeauty';
+
 export default function HomePage() {
   const featured = getFeaturedProducts();
   const newProducts = getNewProducts();
 
   return (
     <>
-      {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-ivory-warm">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid min-h-[520px] items-center gap-8 py-12 lg:grid-cols-2 lg:gap-16 lg:py-20">
-            {/* Text */}
-            <div className="relative z-10 max-w-xl animate-fade-in">
-              <span className="inline-flex items-center gap-2 rounded-full bg-gold/15 border border-gold/30 px-3.5 py-1 text-xs font-semibold text-bronze mb-6 tracking-wide uppercase">
-                <Sparkles size={13} className="text-gold" />
-                Beleza & Autocuidado sob demanda
-              </span>
-              <h1 className="font-display text-4xl font-bold leading-[1.15] text-graphite sm:text-5xl lg:text-6xl tracking-tight">
-                O melhor da beleza.{' '}
-                <span className="text-bronze">A gente traz</span>{' '}
-                <span className="text-gold">até você.</span>
-              </h1>
-              <p className="mt-6 text-lg leading-relaxed text-graphite-light max-w-md">
-                Cosméticos, skincare e cuidados pessoais selecionados com carinho pela Bem Me Quero. Atendimento humanizado e pedidos direto no WhatsApp.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href="/catalogo"
-                  className="inline-flex items-center gap-2 rounded-xl bg-bronze px-6 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-bronze-light transition-all duration-200 hover:shadow-md"
-                >
-                  Explorar catálogo
-                  <ArrowRight size={16} />
-                </Link>
-                <Link
-                  href="/sobre"
-                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-6 py-3.5 text-sm font-semibold text-graphite hover:bg-ivory-warm transition-colors"
-                >
-                  Como funciona
-                </Link>
-              </div>
-            </div>
-
-            {/* Image composition */}
-            <div className="relative hidden lg:block animate-slide-up" style={{ animationDelay: '0.15s' }}>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-white shadow-lg">
-                    <Image
-                      src="/products/serum-facial.jpg"
-                      alt="Sérum Facial Vitamina C"
-                      fill
-                      sizes="(max-width: 1024px) 0vw, 25vw"
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
-                  <div className="relative aspect-square overflow-hidden rounded-2xl bg-white shadow-lg">
-                    <Image
-                      src="/products/oleo-capilar.jpg"
-                      alt="Óleo Capilar Nutritivo"
-                      fill
-                      sizes="(max-width: 1024px) 0vw, 25vw"
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-4 pt-8">
-                  <div className="relative aspect-square overflow-hidden rounded-2xl bg-white shadow-lg">
-                    <Image
-                      src="/products/hidratante-corporal.jpg"
-                      alt="Hidratante Corporal Karité"
-                      fill
-                      sizes="(max-width: 1024px) 0vw, 25vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-white shadow-lg">
-                    <Image
-                      src="/products/batom-matte.jpg"
-                      alt="Batom Líquido Matte"
-                      fill
-                      sizes="(max-width: 1024px) 0vw, 25vw"
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile image */}
-            <div className="lg:hidden relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-white shadow-lg animate-fade-in">
-              <Image
-                src="/products/hero-beleza.jpg"
-                alt="Produtos de Beleza Bem Me Quero"
-                fill
-                sizes="100vw"
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-        {/* Decorative element */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      </section>
+      {/* ── HERO DE BELEZA COM A IMAGEM PRINCIPAL ── */}
+      <HeroBeauty />
 
       {/* ── CATEGORIES ────────────────────────────────────── */}
       <section className="py-16 lg:py-20">

@@ -8,6 +8,31 @@ import { Product } from '@/types/product';
  */
 export const products: Product[] = [
   {
+    id: 'prod-celimax',
+    slug: 'celimax-retinal-shot-tightening-booster',
+    name: 'Celimax Retinal Shot Tightening Booster 20,250 A-Shot™',
+    description:
+      'Booster coreano de alta tecnologia para firmeza, elasticidade e renovação celular intensiva. Formulado com 0.1% de Retinal estabilizado de ação rápida, 20.250 microespículas patenteadas A-Shot™ para infusão celular profunda, 1% de Pantenol e 3% de complexo peptídico Matrixyl® 3000. Preserva a luminosidade e a textura aveludada da pele.',
+    category: 'skincare',
+    priceInCents: 18990,
+    previousPriceInCents: 22990,
+    images: ['/products/celimax-retinal-shot.png'],
+    available: true,
+    variations: [
+      {
+        id: 'var-tamanho',
+        name: 'Apresentação',
+        type: 'size',
+        options: [
+          { id: 'opt-30g', label: 'Tubo Oficial 30g', value: '30g', additionalPriceInCents: 0, available: true },
+        ],
+      },
+    ],
+    createdAt: '2026-11-01T12:00:00Z',
+    published: true,
+    tags: ['destaque', 'novidade'],
+  },
+  {
     id: 'prod-001',
     slug: 'serum-facial-antioxidante-vitamina-c',
     name: 'Sérum Facial Antioxidante Vitamina C 10%',
